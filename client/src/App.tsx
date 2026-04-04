@@ -11,6 +11,7 @@ import Modulos from "./pages/Modulos";
 import Simulados from "./pages/Simulados";
 import Sobre from "./pages/Sobre";
 import Ciclo2 from "./pages/Ciclo2";
+import Ciclo3 from "./pages/Ciclo3";
 import Layout from "./components/Layout";
 
 function Router() {
@@ -24,6 +25,7 @@ function Router() {
         <Route path={"/simulados"} component={Simulados} />
         <Route path={"/sobre"} component={Sobre} />
         <Route path={"/ciclo2"} component={Ciclo2} />
+        <Route path={"/ciclo3"} component={Ciclo3} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />
       </Switch>

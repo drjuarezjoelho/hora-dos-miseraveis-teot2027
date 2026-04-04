@@ -33,14 +33,16 @@ const allModules = [
   {
     cycle: 3,
     name: "ORTOPEDIA CLÍNICA",
-    status: "PRÓXIMO",
-    statusColor: "text-yellow-500 border-yellow-500/30",
+    status: "ATIVO",
+    statusColor: "text-[oklch(0.55_0.22_25)] border-[oklch(0.55_0.22_25)]/30",
+    link: "/ciclo3",
     items: [
-      "Coluna cervical e torácica (degenerativa)",
-      "Coluna lombar",
-      "Ombro e cotovelo (não-trauma)",
-      "Mão e punho",
+      "Coluna degenerativa e deformidades (hérnia, estenose, escoliose, espondilolistese)",
+      "Ombro, cotovelo, mão e punho (manguito, instabilidade, STC, Dupuytren)",
+      "Quadril e joelho (ATQ, NAV, FAI, ATJ, LCA, meniscos)",
+      "Tornozelo e pé (TTP, Aquiles, hallux, tálus, calcâneo)",
     ],
+    stats: { questions: 80, videos: 12, weeks: 14 },
   },
   {
     cycle: 4,
