@@ -20,7 +20,7 @@ O programa completo compreende **5 ciclos distribuídos em 62 semanas** (abril/2
 
 | Ciclo | Período | Tema | Peso TEOT | Questões | Vídeos | Status |
 |-------|---------|------|-----------|----------|--------|--------|
-| 1 | Meses 1-2 | Ciências Básicas | 10-15% | — | — | Concluído |
+| 1 | Meses 1-2 | **Ciências Básicas** | 10-15% | 80 | 8 | Completo |
 | 2 | Meses 3-5 | **Traumatologia** | 35-40% | 80 | 12 | Completo |
 | 3 | Meses 6-8 | **Ortopedia Clínica** | 25-30% | 80 | 12 | Completo |
 | 4 | Meses 9-11 | MI + Especialidades | 15-20% | — | — | Planejado |
@@ -38,10 +38,34 @@ Acesse o site completo em: **https://horamis2027-t5h9sxtb.manus.space**
 - **Metodologia** — Filosofia e pilares do método HORA DOS MISERÁVEIS
 - **Cronograma** — Timeline completa de 62 semanas com marcos e metas
 - **Módulos** — Visão geral dos 5 ciclos e tipos de material
+- **Ciclo 1 — Ciências Básicas** — Roteiros de 8 vídeos, 80 questões, Caderno de Guerra
 - **Ciclo 2 — Traumatologia** — Roteiros de 12 vídeos, 80 questões, padrões de cobrança
 - **Ciclo 3 — Ortopedia Clínica** — Roteiros de 12 vídeos, 80 questões, Caderno de Guerra
 - **Simulados** — Formato, regras e análise de desempenho esperado
 - **Sobre** — Proposta do projeto e FAQ
+
+---
+
+## Ciclo 1 — Ciências Básicas (Completo)
+
+O Ciclo 1 é a base essencial do programa (10-15% do TEOT) e cobre Anatomia Aplicada, Biomecânica, Princípios AO, Consolidação Óssea, Imagem, Tumores e Infecções.
+
+### Material Incluído
+
+**80 questões comentadas** (40 originais + 40 novas com enfoques especiais): pediátrico, osteoporótico, atleta, gestante, DRC, emergência, integração entre temas.
+
+**8 vídeos técnicos** (Vídeos 1-8, 55-65 min cada) com roteiros detalhados e timestamps.
+
+**Caderno de Guerra** com flash points por área (Anatomia, Biomecânica, Princípios AO, Consolidação, Imagem/Tumores/Infecções), tabelas mentais e Top 10 erros.
+
+### Temas Cobertos
+
+| Bloco | Semanas | Temas Principais |
+|-------|---------|------------------|
+| Anatomia | 1-2 | Plexo braquial, nervos periféricos, abordagens, compartimentos, vascularização |
+| Biomecânica/AO | 3-4 | Propriedades do osso, eixo mecânico, parafusos, placas, hastes, fixadores |
+| Consolidação | 5-6 | Primária vs secundária, pseudoartrose, metabolismo ósseo, enxerto |
+| Imagem/Tumores | 7-8 | RX/TC/RM, sinais clássicos, Enneking, Kocher, Tsukayama, estratégia TEOT |
 
 ---
 
@@ -96,7 +120,7 @@ O Ciclo 3 é o segundo maior bloco do TEOT (25-30%) e cobre Coluna Degenerativa 
 - Apresentação completa do programa
 - Filosofia e princípios pedagógicos
 - Estrutura dos 5 ciclos
-- Detalhamento dos Ciclos 2 e 3
+- Detalhamento dos Ciclos 1, 2 e 3
 
 ### 2. **Cronograma Detalhado** (`cronograma-detalhado.md` / `.pdf`)
 - Timeline semanal de 62 semanas
@@ -109,16 +133,25 @@ O Ciclo 3 é o segundo maior bloco do TEOT (25-30%) e cobre Coluna Degenerativa 
 - Modelo de acompanhamento de desempenho
 - Protocolo de sessões HORA DOS MISERÁVEIS
 
-### 4. **Ciclo 2 — Traumatologia Completo** (`ciclo2-traumatologia-completo.md` / `.pdf`)
+### 4. **Ciclo 1 — Ciências Básicas Completo** (`ciclo1-ciencias-basicas-completo.md` / `.pdf`)
+- 80 questões com comentários técnicos detalhados
+- 8 roteiros de vídeos com timestamps
+
+### 5. **Caderno de Guerra — Ciclo 1** (`caderno-de-guerra-ciclo1.md` / `.pdf`)
+- Flash points por área (Anatomia, Biomecânica, AO, Consolidação, Imagem)
+- Tabelas mentais de classificações
+- Top 10 erros que derrubam candidatos em fundamentos
+
+### 6. **Ciclo 2 — Traumatologia Completo** (`ciclo2-traumatologia-completo.md` / `.pdf`)
 - 80 questões com comentários técnicos detalhados
 - 12 roteiros de vídeos com timestamps
 
-### 5. **Ciclo 3 — Ortopedia Clínica Completo** (`ciclo3-ortopedia-clinica-completo.md` / `.pdf`)
+### 7. **Ciclo 3 — Ortopedia Clínica Completo** (`ciclo3-ortopedia-clinica-completo.md` / `.pdf`)
 - 80 questões com comentários técnicos detalhados
 - 12 roteiros de vídeos com timestamps
 - Análise de padrões e erros mais prováveis
 
-### 6. **Caderno de Guerra — Ciclo 3** (`caderno-de-guerra-ciclo3.md` / `.pdf`)
+### 8. **Caderno de Guerra — Ciclo 3** (`caderno-de-guerra-ciclo3.md` / `.pdf`)
 - Flash points por área (Coluna, MS, Quadril, Joelho, Pé/Tornozelo)
 - Tabelas mentais de classificações
 - Comparações entre conceitos próximos
@@ -167,6 +200,7 @@ hora-dos-miseraveis-teot2027/
 │       │   ├── Metodologia.tsx
 │       │   ├── Cronograma.tsx
 │       │   ├── Modulos.tsx
+│       │   ├── Ciclo1.tsx
 │       │   ├── Ciclo2.tsx
 │       │   ├── Ciclo3.tsx
 │       │   ├── Simulados.tsx
@@ -188,6 +222,8 @@ hora-dos-miseraveis-teot2027/
 │   ├── documento-mestre.md / .pdf
 │   ├── cronograma-detalhado.md / .pdf
 │   ├── plano-implementacao-operacional.md / .pdf
+│   ├── ciclo1-ciencias-basicas-completo.md / .pdf
+│   ├── caderno-de-guerra-ciclo1.md / .pdf
 │   ├── ciclo2-traumatologia-completo.md / .pdf
 │   ├── ciclo3-ortopedia-clinica-completo.md / .pdf
 │   └── caderno-de-guerra-ciclo3.md / .pdf
@@ -310,7 +346,7 @@ Este projeto é fornecido como material educacional para residentes em ortopedia
 ---
 
 **Última atualização:** Abril 2026
-**Versão:** 3.0 (Ciclo 3 — Ortopedia Clínica Completo)
+**Versão:** 4.0 (Ciclos 1-3 Completos)
 **Status:** Em desenvolvimento — Ciclo 4 em planejamento
 
 ---
@@ -322,6 +358,8 @@ Este projeto é fornecido como material educacional para residentes em ortopedia
 - **Cronograma Detalhado:** `documentos/cronograma-detalhado.pdf`
 - **Plano Operacional:** `documentos/plano-implementacao-operacional.pdf`
 - **Ciclo 2 Completo:** `documentos/ciclo2-traumatologia-completo.pdf`
+- **Ciclo 1 Completo:** `documentos/ciclo1-ciencias-basicas-completo.pdf`
+- **Caderno de Guerra Ciclo 1:** `documentos/caderno-de-guerra-ciclo1.pdf`
 - **Ciclo 3 Completo:** `documentos/ciclo3-ortopedia-clinica-completo.pdf`
 - **Caderno de Guerra Ciclo 3:** `documentos/caderno-de-guerra-ciclo3.pdf`
 
