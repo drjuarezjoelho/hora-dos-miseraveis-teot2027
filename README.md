@@ -23,7 +23,7 @@ O programa completo compreende **5 ciclos distribuídos em 62 semanas** (abril/2
 | 1 | Meses 1-2 | **Ciências Básicas** | 10-15% | 80 | 8 | Completo |
 | 2 | Meses 3-5 | **Traumatologia** | 35-40% | 80 | 12 | Completo |
 | 3 | Meses 6-8 | **Ortopedia Clínica** | 25-30% | 80 | 12 | Completo |
-| 4 | Meses 9-11 | MI + Especialidades | 15-20% | — | — | Planejado |
+| 4 | Meses 9-11 | **Especialidades** | 15-20% | 80 | 12 | Completo |
 | 5 | Meses 12-14 | Reta Final | Revisão | — | — | Planejado |
 
 ---
@@ -39,8 +39,9 @@ Acesse o site completo em: **https://horamis2027-t5h9sxtb.manus.space**
 - **Cronograma** — Timeline completa de 62 semanas com marcos e metas
 - **Módulos** — Visão geral dos 5 ciclos e tipos de material
 - **Ciclo 1 — Ciências Básicas** — Roteiros de 8 vídeos, 80 questões, Caderno de Guerra
-- **Ciclo 2 — Traumatologia** — Roteiros de 12 vídeos, 80 questões, padrões de cobrança
+- **Ciclo 2 — Traumatologia** — Roteiros de 12 vídeos, 80 questões, padrões de cobranca
 - **Ciclo 3 — Ortopedia Clínica** — Roteiros de 12 vídeos, 80 questões, Caderno de Guerra
+- **Ciclo 4 — Especialidades** — Roteiros de 12 vídeos, 80 questões, Caderno de Guerra
 - **Simulados** — Formato, regras e análise de desempenho esperado
 - **Sobre** — Proposta do projeto e FAQ
 
@@ -158,6 +159,23 @@ O Ciclo 3 é o segundo maior bloco do TEOT (25-30%) e cobre Coluna Degenerativa 
 - Pegadinhas clássicas e Top 10 erros
 - Flashcards essenciais para revisão relâmpago
 
+### 9. **Ciclo 4 — Especialidades Completo** (`ciclo4-especialidades-completo.md` / `.pdf`)
+- 80 questões com comentários técnicos detalhados
+- 12 roteiros de vídeos com timestamps
+- Análise de padrões e erros mais próváveis
+
+### 10. **Caderno de Guerra — Ciclo 4** (`caderno-de-guerra-ciclo4.md` / `.pdf`)
+- Flash points por área (Pediátrica, Tumores, Infecções, Biomecânica, Esporte, Reumatologia)
+- Tabelas mentais de classificações
+- Comparações entre conceitos próximos
+- Pegadinhas clássicas e Top 15 erros
+- Flashcards essenciais
+
+### 11. **Resumo Executivo — Ciclo 4** (`resumo-executivo-ciclo4.md` / `.pdf`)
+- Visão geral estratégica do Ciclo 4
+- Objetivos mensuráveis e metas de aproveitamento
+- Padrões de cobranca identificados
+
 ---
 
 ## Tecnologia
@@ -201,10 +219,11 @@ hora-dos-miseraveis-teot2027/
 │       │   ├── Cronograma.tsx
 │       │   ├── Modulos.tsx
 │       │   ├── Ciclo1.tsx
-│       │   ├── Ciclo2.tsx
-│       │   ├── Ciclo3.tsx
-│       │   ├── Simulados.tsx
-│       │   ├── Sobre.tsx
+│       │   ├── Ciclo1.tsx
+│   ├── Ciclo2.tsx
+│   ├── Ciclo3.tsx
+│   ├── Ciclo4.tsx
+│   ├── Simulados.tsx      │   ├── Sobre.tsx
 │       │   └── NotFound.tsx
 │       ├── components/
 │       │   ├── Layout.tsx
@@ -226,7 +245,10 @@ hora-dos-miseraveis-teot2027/
 │   ├── caderno-de-guerra-ciclo1.md / .pdf
 │   ├── ciclo2-traumatologia-completo.md / .pdf
 │   ├── ciclo3-ortopedia-clinica-completo.md / .pdf
-│   └── caderno-de-guerra-ciclo3.md / .pdf
+│   ├── caderno-de-guerra-ciclo3.md / .pdf
+│   ├── ciclo4-especialidades-completo.md / .pdf
+│   ├── caderno-de-guerra-ciclo4.md / .pdf
+│   └── resumo-executivo-ciclo4.md / .pdf
 ├── package.json
 ├── tsconfig.json
 └── vite.config.ts
@@ -316,14 +338,32 @@ Cada questão contém:
 
 ---
 
+## Ciclo 4 — Especialidades (Completo)
+
+O Ciclo 4 cobre Especialidades e Subespecialidades (15-20% do TEOT) e inclui Ortopedia Pediátrica, Tumores Ósseos, Infecções Osteoarticulares, Biomecânica Avançada, Medicina do Esporte e Reumatologia Aplicada.
+
+### Material Incluído
+
+**80 questões comentadas** (40 originais + 40 novas com enfoques especiais): pediátrico, oncológico, infeccioso, implantológico, esportivo, reumatológico.
+
+**12 vídeos técnicos** (V33-V44, 62-70 min cada) com roteiros detalhados e timestamps.
+
+**Caderno de Guerra** com flash points, tabelas mentais de classificações (Enneking, Catterall, Herring, Salter-Harris, Waldvogel, Cierny-Mader, MSIS), comparacões entre conceitos, pegadinhas clássicas e Top 15 erros.
+
+### Temas Cobertos
+
+| Bloco | Semanas | Temas Principais |
+|-------|---------|------------------|
+| Ortopedia Pediátrica | 37-38 | DDQ (Tonnis), Pé Torto (Pirani/Dimeglio), Perthes (Herring), SCFE (Loder), Fraturas (Salter-Harris) |
+| Tumores | 39-40 | Enneking staging, Tumores benignos/malignos, Mirels score, Biópsia, Reconstrução |
+| Infecções | 41-42 | Waldvogel, Cierny-Mader, Kocher criteria, MSIS, Osteomielite, Artrite séptica, PJI |
+| Biomecânica | 43-44 | Tribologia, Materiais, Falha de implante, Revisão, Paprosky, Fixacão biológica |
+| Esporte | 45-46 | Multiligamentar, Cartilagem (ICRS), Instabilidade, RTP, Prevenção |
+| Reumatologia | 47-50 | Artrite Reumatoide, Espondilite, Gota, Pseudogota, Indicações cirurgás |
+
 ## Ciclos Futuros
 
-### Ciclo 4 — MI + Especialidades (Semanas 37-50)
-- Ortopedia pediátrica (DDQ, pé torto, Legg-Perthes, ECFE)
-- Tumores ósseos (benignos e malignos)
-- Infecções osteoarticulares
-- Biomecânica e implantes
-- 80 questões + 12 vídeos
+### Ciclo 5 — Reta Final (Semanas 51-62)
 
 ### Ciclo 5 — Reta Final (Semanas 51-62)
 - Revisão geral por subespecialidade
@@ -346,8 +386,8 @@ Este projeto é fornecido como material educacional para residentes em ortopedia
 ---
 
 **Última atualização:** Abril 2026
-**Versão:** 4.0 (Ciclos 1-3 Completos)
-**Status:** Em desenvolvimento — Ciclo 4 em planejamento
+**Versão:** 5.0 (Ciclos 1-4 Completos)
+**Status:** Ciclos 1-4 Completos — Ciclo 5 em planejamento
 
 ---
 
@@ -357,11 +397,16 @@ Este projeto é fornecido como material educacional para residentes em ortopedia
 - **Documento Mestre:** `documentos/documento-mestre.pdf`
 - **Cronograma Detalhado:** `documentos/cronograma-detalhado.pdf`
 - **Plano Operacional:** `documentos/plano-implementacao-operacional.pdf`
-- **Ciclo 2 Completo:** `documentos/ciclo2-traumatologia-completo.pdf`
 - **Ciclo 1 Completo:** `documentos/ciclo1-ciencias-basicas-completo.pdf`
 - **Caderno de Guerra Ciclo 1:** `documentos/caderno-de-guerra-ciclo1.pdf`
+- **Ciclo 2 Completo:** `documentos/ciclo2-traumatologia-completo.pdf`
+- **Resumo Executivo Ciclo 2:** `documentos/resumo-executivo-ciclo2.pdf`
+- **Caderno de Guerra Ciclo 2:** `documentos/caderno-de-guerra-ciclo2.pdf`
 - **Ciclo 3 Completo:** `documentos/ciclo3-ortopedia-clinica-completo.pdf`
 - **Caderno de Guerra Ciclo 3:** `documentos/caderno-de-guerra-ciclo3.pdf`
+- **Ciclo 4 Completo:** `documentos/ciclo4-especialidades-completo.pdf`
+- **Caderno de Guerra Ciclo 4:** `documentos/caderno-de-guerra-ciclo4.pdf`
+- **Resumo Executivo Ciclo 4:** `documentos/resumo-executivo-ciclo4.pdf`
 
 ---
 

@@ -70,10 +70,10 @@ const fadeUp = {
 };
 
 const stats = [
-  { number: "240+", label: "QUESTÕES (CICLOS 1-3)", icon: BookOpen },
-  { number: "32", label: "VÍDEOS TÉCNICOS", icon: Target },
-  { number: "36", label: "SEMANAS INTENSIVAS", icon: Clock },
-  { number: "75-85%", label: "PESO NO TEOT", icon: AlertTriangle },
+  { number: "320+", label: "QUESTÕES (CICLOS 1-4)", icon: BookOpen },
+  { number: "44", label: "VÍDEOS TÉCNICOS", icon: Target },
+  { number: "50", label: "SEMANAS INTENSIVAS", icon: Clock },
+  { number: "90-95%", label: "PESO NO TEOT", icon: AlertTriangle },
 ];
 
 const modules = [
@@ -154,6 +154,12 @@ export default function Home() {
                 className="inline-flex items-center gap-2 border border-border text-foreground font-accent text-sm tracking-wider px-6 py-3 hover:border-[oklch(0.55_0.22_25)] hover:text-[oklch(0.55_0.22_25)] transition-colors duration-150 no-underline"
               >
                 CICLO 3 — ORTOPEDIA CLÍNICA
+              </Link>
+              <Link
+                href="/ciclo4"
+                className="inline-flex items-center gap-2 border border-border text-foreground font-accent text-sm tracking-wider px-6 py-3 hover:border-[oklch(0.55_0.22_25)] hover:text-[oklch(0.55_0.22_25)] transition-colors duration-150 no-underline"
+              >
+                CICLO 4 — ESPECIALIDADES
               </Link>
             </motion.div>
           </motion.div>
@@ -291,7 +297,7 @@ export default function Home() {
           </h2>
           <p className="text-sm text-muted-foreground max-w-lg mx-auto mb-8">
             Não existe atalho. Existe método, disciplina e sofrimento produtivo.
-            O TEOT 2027 não espera. 3 ciclos ativos agora.
+            O TEOT 2027 não espera. 4 ciclos ativos agora.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
@@ -311,6 +317,12 @@ export default function Home() {
               className="inline-flex items-center gap-2 border border-border text-foreground font-accent text-sm tracking-wider px-6 py-3 hover:border-[oklch(0.55_0.22_25)] transition-colors duration-150 no-underline"
             >
               CICLO 3 — ORTOPEDIA
+            </Link>
+            <Link
+              href="/ciclo4"
+              className="inline-flex items-center gap-2 border border-border text-foreground font-accent text-sm tracking-wider px-6 py-3 hover:border-[oklch(0.55_0.22_25)] transition-colors duration-150 no-underline"
+            >
+              CICLO 4 — ESPECIALIDADES
             </Link>
             <Link
               href="/cronograma"
