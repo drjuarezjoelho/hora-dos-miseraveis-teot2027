@@ -299,6 +299,13 @@ vercel
 vercel --prod
 ```
 
+**Analytics opcional (Umami):** no painel da Vercel, em *Project → Settings → Environment Variables*, defina (somente se usar Umami):
+
+- `VITE_ANALYTICS_ENDPOINT` — URL base da instância (ex.: `https://analytics.seudominio.com`, sem barra final opcional)
+- `VITE_ANALYTICS_WEBSITE_ID` — ID do site no Umami
+
+Se não forem definidas, o site funciona normalmente e nenhum script de analytics é carregado.
+
 ---
 
 ## Metodologia HORA DOS MISERÁVEIS
