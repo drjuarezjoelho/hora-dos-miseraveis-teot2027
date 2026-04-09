@@ -12,6 +12,7 @@ import Ciclo1 from "./pages/Ciclo1";
 import Ciclo2 from "./pages/Ciclo2";
 import Ciclo3 from "./pages/Ciclo3";
 import Ciclo4 from "./pages/Ciclo4";
+import Ciclo5 from "./pages/Ciclo5";
 import Simulados from "./pages/Simulados";
 import Sobre from "./pages/Sobre";
 import Layout from "./components/Layout";
@@ -28,6 +29,7 @@ function Router() {
         <Route path={"/ciclo2"} component={Ciclo2} />
         <Route path={"/ciclo3"} component={Ciclo3} />
         <Route path={"/ciclo4"} component={Ciclo4} />
+        <Route path={"/ciclo5"} component={Ciclo5} />
         <Route path={"/simulados"} component={Simulados} />
         <Route path={"/sobre"} component={Sobre} />
         <Route path={"/404"} component={NotFound} />

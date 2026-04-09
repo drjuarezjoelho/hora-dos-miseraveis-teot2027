@@ -70,17 +70,17 @@ const fadeUp = {
 };
 
 const stats = [
-  { number: "320+", label: "QUESTÕES (CICLOS 1-4)", icon: BookOpen },
-  { number: "44", label: "VÍDEOS TÉCNICOS", icon: Target },
-  { number: "50", label: "SEMANAS INTENSIVAS", icon: Clock },
+  { number: "360+", label: "QUESTÕES (CICLOS 1-5)", icon: BookOpen },
+  { number: "52", label: "VÍDEOS TÉCNICOS", icon: Target },
+  { number: "62", label: "SEMANAS INTENSIVAS", icon: Clock },
   { number: "90-95%", label: "PESO NO TEOT", icon: AlertTriangle },
 ];
 
 const modules = [
-  { title: "TRAUMA GERAL", desc: "Expostas, compartimental, infecção, embolia", weeks: "Sem 9-11" },
-  { title: "MEMBRO SUPERIOR", desc: "Úmero, rádio/ulna, cotovelo", weeks: "Sem 12-14" },
-  { title: "MEMBRO INFERIOR", desc: "Fêmur, tíbia, joelho periarticular", weeks: "Sem 15-17" },
-  { title: "PELVE + COLUNA", desc: "Acetábulo, anel pélvico, coluna trauma", weeks: "Sem 18-20" },
+  { title: "REVISÃO TRAUMA", desc: "Expostas, pelve, coluna trauma, damage control", weeks: "Sem 51-52" },
+  { title: "REVISÃO CLÍNICA", desc: "Coluna, ombro, quadril, joelho, pé/tornozelo", weeks: "Sem 53-55" },
+  { title: "SIMULADOS PROGRESSIVOS", desc: "80 -> 100 -> 120 questões com tempo real", weeks: "Sem 56-60" },
+  { title: "DRILL FINAL", desc: "Correção de erros e estratégia final TEOT", weeks: "Sem 61-62" },
 ];
 
 export default function Home() {
@@ -161,6 +161,12 @@ export default function Home() {
               >
                 CICLO 4 — ESPECIALIDADES
               </Link>
+              <Link
+                href="/ciclo5"
+                className="inline-flex items-center gap-2 border border-border text-foreground font-accent text-sm tracking-wider px-6 py-3 hover:border-[oklch(0.55_0.22_25)] hover:text-[oklch(0.55_0.22_25)] transition-colors duration-150 no-underline"
+              >
+                CICLO 5 — RETA FINAL
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -194,7 +200,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CICLO 2 OVERVIEW */}
+      {/* CICLO 5 OVERVIEW */}
       <section className="py-20">
         <div className="container">
           <div className="flex items-center gap-3 mb-2">
@@ -204,12 +210,12 @@ export default function Home() {
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
-            CICLO 2 — TRAUMATOLOGIA
+            CICLO 5 — RETA FINAL
           </h2>
           <p className="text-muted-foreground text-sm max-w-2xl mb-12">
-            O bloco de maior peso no TEOT (35-40%). Fraturas de ossos longos, expostas
-            e pelve representam 60% das questões de trauma. Semanas 9 a 22 de treinamento
-            intensivo com 80 questões comentadas e 12 vídeos técnicos.
+            Fechamento operacional do programa com revisão integrada dos Ciclos 1-4,
+            simulados progressivos e correção orientada por erro. Semanas 51 a 62 com foco
+            em estabilidade de desempenho e execução sob pressão.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -235,11 +241,11 @@ export default function Home() {
 
           <div className="mt-8">
             <Link
-              href="/ciclo2"
+              href="/ciclo5"
               className="inline-flex items-center gap-2 font-accent text-sm tracking-wider text-[oklch(0.55_0.22_25)] hover:text-foreground transition-colors duration-150 no-underline"
             >
               <Swords className="w-4 h-4" />
-              ACESSAR CICLO 2 COMPLETO
+              ACESSAR CICLO 5 COMPLETO
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
@@ -297,7 +303,7 @@ export default function Home() {
           </h2>
           <p className="text-sm text-muted-foreground max-w-lg mx-auto mb-8">
             Não existe atalho. Existe método, disciplina e sofrimento produtivo.
-            O TEOT 2027 não espera. 4 ciclos ativos agora.
+            O TEOT 2027 não espera. 5 ciclos estruturados agora.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
@@ -323,6 +329,12 @@ export default function Home() {
               className="inline-flex items-center gap-2 border border-border text-foreground font-accent text-sm tracking-wider px-6 py-3 hover:border-[oklch(0.55_0.22_25)] transition-colors duration-150 no-underline"
             >
               CICLO 4 — ESPECIALIDADES
+            </Link>
+            <Link
+              href="/ciclo5"
+              className="inline-flex items-center gap-2 border border-border text-foreground font-accent text-sm tracking-wider px-6 py-3 hover:border-[oklch(0.55_0.22_25)] transition-colors duration-150 no-underline"
+            >
+              CICLO 5 — RETA FINAL
             </Link>
             <Link
               href="/cronograma"

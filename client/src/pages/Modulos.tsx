@@ -67,14 +67,17 @@ const allModules = [
   {
     cycle: 5,
     name: "RETA FINAL",
-    status: "PLANEJADO",
-    statusColor: "text-muted-foreground border-border",
+    status: "ATIVO",
+    statusColor: "text-[oklch(0.55_0.22_25)] border-[oklch(0.55_0.22_25)]/30",
+    link: "/ciclo5",
     items: [
-      "Biomecânica e implantes",
-      "Revisão geral por subespecialidade",
-      "Simulados intensivos HORA DOS MISERÁVEIS",
-      "Revisão de erros e flashcards",
+      "Revisão integrada dos Ciclos 1-4",
+      "Simulados progressivos (80 -> 100 -> 120 questões)",
+      "40 questões novas comentadas com foco em conduta e pitfalls",
+      "Roteiros V45-V52 para reta final de prova",
+      "Caderno de erros e drill de 7 dias",
     ],
+    stats: { questions: 40, videos: 8, weeks: 12 },
   },
 ];
 

@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/ciclo2", label: "CICLO 2" },
   { href: "/ciclo3", label: "CICLO 3" },
   { href: "/ciclo4", label: "CICLO 4" },
+  { href: "/ciclo5", label: "CICLO 5" },
   { href: "/simulados", label: "SIMULADOS" },
   { href: "/sobre", label: "SOBRE" },
 ];
@@ -123,7 +124,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 TEOT 2027 — FORMAÇÃO DE ELITE
               </span>
               <span className="font-mono text-[10px] text-muted-foreground/50">
-                v5.0 — Ciclos 1-4 Completos
+                v5.1 — Ciclos 1-5 Estruturados
               </span>
             </div>
           </div>

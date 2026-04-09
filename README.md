@@ -258,6 +258,11 @@ hora-dos-miseraveis-teot2027/
 
 ## Como Usar
 
+### Pré-requisitos
+
+- Node.js `20.19+` (ou `22.x`)
+- `pnpm` (via Corepack ou instalação global)
+
 ### 1. Clonar o Repositório
 
 ```bash
@@ -284,6 +289,14 @@ Acesse em `http://localhost:3000`
 ```bash
 pnpm build
 pnpm start
+```
+
+### 5. Deploy (Vercel)
+
+```bash
+npm i -g vercel
+vercel
+vercel --prod
 ```
 
 ---
@@ -361,15 +374,21 @@ O Ciclo 4 cobre Especialidades e Subespecialidades (15-20% do TEOT) e inclui Ort
 | Esporte | 45-46 | Multiligamentar, Cartilagem (ICRS), Instabilidade, RTP, Prevenção |
 | Reumatologia | 47-50 | Artrite Reumatoide, Espondilite, Gota, Pseudogota, Indicações cirurgás |
 
-## Ciclos Futuros
+## Ciclo 5 — Reta Final (Completo)
 
-### Ciclo 5 — Reta Final (Semanas 51-62)
+O Ciclo 5 consolida a preparação final para o TEOT com revisão integrada dos Ciclos 1-4, simulados progressivos e trilha de correção orientada por erro.
 
-### Ciclo 5 — Reta Final (Semanas 51-62)
-- Revisão geral por subespecialidade
-- Simulados intensivos HORA DOS MISERÁVEIS
-- Revisão de erros e flashcards
-- 80 questões + 8 vídeos
+### Material Incluído
+
+- Revisão integrada por blocos de maior impacto
+- Simulados progressivos (80 -> 100 -> 120 questões)
+- **40 questões novas comentadas** com gabarito (foco em conduta e pitfalls)
+- **8 vídeos estratégicos** (V45-V52) para reta final
+- Caderno de Guerra específico da fase final
+
+### Protocolo Aplicado
+
+O Ciclo 5 foi estruturado conforme o **Protocolo Mestre de Produção**, com objetivos mensuráveis, matriz de cobertura, checklist acadêmico/técnico e critérios de conclusão.
 
 ---
 
@@ -386,8 +405,8 @@ Este projeto é fornecido como material educacional para residentes em ortopedia
 ---
 
 **Última atualização:** Abril 2026
-**Versão:** 5.0 (Ciclos 1-4 Completos)
-**Status:** Ciclos 1-4 Completos — Ciclo 5 em planejamento
+**Versão:** 5.1 (Ciclos 1-5 Estruturados)
+**Status:** Ciclos 1-5 Estruturados — Integração final de site/deploy pendente
 
 ---
 
@@ -407,6 +426,10 @@ Este projeto é fornecido como material educacional para residentes em ortopedia
 - **Ciclo 4 Completo:** `documentos/ciclo4-especialidades-completo.pdf`
 - **Caderno de Guerra Ciclo 4:** `documentos/caderno-de-guerra-ciclo4.pdf`
 - **Resumo Executivo Ciclo 4:** `documentos/resumo-executivo-ciclo4.pdf`
+- **Ciclo 5 Completo:** `documentos/ciclo5-reta-final-completo.md`
+- **Caderno de Guerra Ciclo 5:** `documentos/caderno-de-guerra-ciclo5.md`
+- **Resumo Executivo Ciclo 5:** `documentos/resumo-executivo-ciclo5.md`
+- **Protocolo Mestre de Produção:** `documentos/protocolo-mestre-producao.md`
 
 ---
 
