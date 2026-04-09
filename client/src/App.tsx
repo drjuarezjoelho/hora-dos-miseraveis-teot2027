@@ -16,6 +16,7 @@ const Ciclo3 = lazy(() => import("./pages/Ciclo3"));
 const Ciclo4 = lazy(() => import("./pages/Ciclo4"));
 const Ciclo5 = lazy(() => import("./pages/Ciclo5"));
 const Simulados = lazy(() => import("./pages/Simulados"));
+const LaboratorioIA = lazy(() => import("./pages/LaboratorioIA"));
 const Sobre = lazy(() => import("./pages/Sobre"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -42,6 +43,7 @@ function Router() {
           <Route path={"/ciclo4"} component={Ciclo4} />
           <Route path={"/ciclo5"} component={Ciclo5} />
           <Route path={"/simulados"} component={Simulados} />
+          <Route path={"/laboratorio-ia"} component={LaboratorioIA} />
           <Route path={"/sobre"} component={Sobre} />
           <Route path={"/404"} component={NotFound} />
           <Route component={NotFound} />

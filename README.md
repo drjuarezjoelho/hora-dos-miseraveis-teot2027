@@ -42,7 +42,8 @@ Acesse o site completo em: **https://horamis2027-t5h9sxtb.manus.space**
 - **Ciclo 2 — Traumatologia** — Roteiros de 12 vídeos, 80 questões, padrões de cobranca
 - **Ciclo 3 — Ortopedia Clínica** — Roteiros de 12 vídeos, 80 questões, Caderno de Guerra
 - **Ciclo 4 — Especialidades** — Roteiros de 12 vídeos, 80 questões, Caderno de Guerra
-- **Simulados** — Formato, regras e análise de desempenho esperado
+- **Simulados** — 12 simulados mensais (linha do tempo), blocos Ciclo 2, progressivos Ciclo 5 (S5.1–S5.4); formato, regras e metas (ver `documentos/plano-simulados-integral.md`)
+- **Laboratório IA** (`/laboratorio-ia`) — tutor TEOT, chat sobre o material, geração de questões e correção assistida via API no servidor (OpenRouter ou OpenAI; ver `.env.example`)
 - **Sobre** — Proposta do projeto e FAQ
 
 ---
@@ -438,6 +439,7 @@ Este projeto é fornecido como material educacional para residentes em ortopedia
 - **Caderno de Guerra Ciclo 5:** `documentos/caderno-de-guerra-ciclo5.md`
 - **Resumo Executivo Ciclo 5:** `documentos/resumo-executivo-ciclo5.md`
 - **Protocolo Mestre de Produção:** `documentos/protocolo-mestre-producao.md`
+- **Plano integral de simulados (12 mensais + Ciclo 2 + Ciclo 5):** `documentos/plano-simulados-integral.md`
 
 ---
 

@@ -15,6 +15,7 @@ const navLinks = [
   { href: "/ciclo4", label: "CICLO 4" },
   { href: "/ciclo5", label: "CICLO 5" },
   { href: "/simulados", label: "SIMULADOS" },
+  { href: "/laboratorio-ia", label: "LAB IA" },
   { href: "/sobre", label: "SOBRE" },
 ];
 
