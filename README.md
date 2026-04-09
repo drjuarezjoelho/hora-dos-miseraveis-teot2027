@@ -412,7 +412,8 @@ Este projeto é fornecido como material educacional para residentes em ortopedia
 
 ## Links Úteis
 
-- **Site publicado:** https://horamis2027-t5h9sxtb.manus.space
+- **Site publicado (Vercel):** https://hora-dos-miseraveis-teot2027.vercel.app
+- **Site (Manus):** https://horamis2027-t5h9sxtb.manus.space
 - **Documento Mestre:** `documentos/documento-mestre.pdf`
 - **Cronograma Detalhado:** `documentos/cronograma-detalhado.pdf`
 - **Plano Operacional:** `documentos/plano-implementacao-operacional.pdf`
