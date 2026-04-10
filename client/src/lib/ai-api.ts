@@ -11,9 +11,25 @@ export async function postChatStream(
     body: JSON.stringify(body),
   });
 
+  const ct = res.headers.get("content-type") ?? "";
+
   if (!res.ok) {
-    const errText = await res.text();
-    throw new Error(errText || `HTTP ${res.status}`);
+    let msg = `HTTP ${res.status}`;
+    try {
+      const j = (await res.json()) as { error?: string; message?: string };
+      if (j.error) msg = j.message ? `${j.error}: ${j.message}` : j.error;
+    } catch {
+      const t = await res.text();
+      if (t) msg = t.slice(0, 500);
+    }
+    throw new Error(msg);
+  }
+
+  if (ct.includes("application/json")) {
+    const data = (await res.json()) as { text: string };
+    if (typeof data.text !== "string") throw new Error("Resposta inválida do servidor");
+    onDelta(data.text);
+    return;
   }
 
   const reader = res.body?.getReader();

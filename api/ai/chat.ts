@@ -1,7 +1,27 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { handleChatStream } from "../../server/ai/handlers";
+import { handleChat } from "../../server/ai/handlers";
 
-export default function handler(req: VercelRequest, res: VercelResponse) {
+function parseJsonBody(req: VercelRequest): unknown {
+  const b = req.body as unknown;
+  if (b == null) return undefined;
+  if (typeof b === "string") {
+    try {
+      return JSON.parse(b) as unknown;
+    } catch {
+      return undefined;
+    }
+  }
+  if (Buffer.isBuffer(b)) {
+    try {
+      return JSON.parse(b.toString("utf8")) as unknown;
+    } catch {
+      return undefined;
+    }
+  }
+  return b;
+}
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "OPTIONS") {
     res.status(204).end();
     return;
@@ -11,5 +31,5 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     res.end(JSON.stringify({ error: "Method not allowed" }));
     return;
   }
-  handleChatStream(req.body, res);
+  await handleChat(parseJsonBody(req), res);
 }

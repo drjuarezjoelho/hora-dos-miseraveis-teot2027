@@ -1,14 +1,14 @@
 import { Router, type Request, type Response } from "express";
 import {
   handleAssistGrade,
-  handleChatStream,
+  handleChat,
   handleGenerateQuestions,
 } from "../ai/handlers";
 
 export const aiRouter = Router();
 
-aiRouter.post("/chat", (req: Request, res: Response) => {
-  handleChatStream(req.body, res);
+aiRouter.post("/chat", async (req: Request, res: Response) => {
+  await handleChat(req.body, res);
 });
 
 aiRouter.post("/generate-questions", async (req: Request, res: Response) => {

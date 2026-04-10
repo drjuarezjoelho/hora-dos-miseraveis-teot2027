@@ -1,4 +1,4 @@
-import { generateObject, streamText, zodSchema, type ModelMessage } from "ai";
+import { generateObject, generateText, zodSchema, type ModelMessage } from "ai";
 import type { ServerResponse } from "node:http";
 import {
   ASSIST_GRADE_SYSTEM,
@@ -29,7 +29,8 @@ function mapToModelMessages(
   });
 }
 
-export function handleChatStream(body: unknown, res: ServerResponse): void {
+/** Chat completo em JSON — fiável em Vercel Serverless (streaming com pipe* falha frequentemente). */
+export async function handleChat(body: unknown, res: ServerResponse): Promise<void> {
   const parsed = chatBodySchema.safeParse(body);
   if (!parsed.success) {
     res.statusCode = 400;
@@ -41,7 +42,7 @@ export function handleChatStream(body: unknown, res: ServerResponse): void {
   let model;
   try {
     model = getLanguageModel();
-  } catch (e) {
+  } catch {
     res.statusCode = 503;
     res.setHeader("Content-Type", "application/json; charset=utf-8");
     res.end(
@@ -56,14 +57,27 @@ export function handleChatStream(body: unknown, res: ServerResponse): void {
   const system = parsed.data.mode === "tutor" ? TUTOR_SYSTEM : MATERIAL_CHAT_SYSTEM;
   const messages = mapToModelMessages(parsed.data.messages);
 
-  const result = streamText({
-    model,
-    system,
-    messages,
-    maxOutputTokens: 4096,
-  });
-
-  result.pipeTextStreamToResponse(res);
+  try {
+    const result = await generateText({
+      model,
+      system,
+      messages,
+      maxOutputTokens: 4096,
+    });
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    res.end(JSON.stringify({ text: result.text }));
+  } catch (err) {
+    console.error("[ai/chat]", err);
+    res.statusCode = 500;
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    res.end(
+      JSON.stringify({
+        error: "Falha ao gerar resposta",
+        message: err instanceof Error ? err.message : String(err),
+      }),
+    );
+  }
 }
 
 export async function handleGenerateQuestions(body: unknown, res: ServerResponse): Promise<void> {
