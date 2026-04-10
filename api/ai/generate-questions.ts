@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { handleGenerateQuestions } from "../../server/ai/handlers";
+import { parseVercelJsonBody } from "../../server/ai/parse-vercel-body";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "OPTIONS") {
@@ -11,5 +12,5 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.end(JSON.stringify({ error: "Method not allowed" }));
     return;
   }
-  await handleGenerateQuestions(req.body, res);
+  await handleGenerateQuestions(parseVercelJsonBody(req), res);
 }

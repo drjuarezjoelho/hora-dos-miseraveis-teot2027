@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { handleAssistGrade } from "../../server/ai/handlers";
+import { parseVercelJsonBody } from "../../server/ai/parse-vercel-body";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "OPTIONS") {
@@ -11,5 +12,5 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.end(JSON.stringify({ error: "Method not allowed" }));
     return;
   }
-  await handleAssistGrade(req.body, res);
+  await handleAssistGrade(parseVercelJsonBody(req), res);
 }

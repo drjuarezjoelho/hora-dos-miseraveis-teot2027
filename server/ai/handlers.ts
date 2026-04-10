@@ -1,5 +1,6 @@
-import { generateObject, generateText, zodSchema, type ModelMessage } from "ai";
+import { generateText, type ModelMessage } from "ai";
 import type { ServerResponse } from "node:http";
+import { parseJsonFromModelText } from "./json-from-llm";
 import {
   ASSIST_GRADE_SYSTEM,
   MATERIAL_CHAT_SYSTEM,
@@ -109,23 +110,64 @@ export async function handleGenerateQuestions(body: unknown, res: ServerResponse
     `Quantidade: ${count} questões (múltipla escolha A–E).`,
     context ? `Contexto adicional do aluno:\n${context}` : "",
     "Gere exatamente o número pedido de questões completas com comentário.",
+    "",
+    "Responda com APENAS um objeto JSON válido (sem texto antes ou depois). O objeto deve ter a chave \"questions\": array com exatamente " +
+      String(count) +
+      " itens. Cada item: stem (string), alternatives (array de 5 objetos { letter: A|B|C|D|E, text: string }), correctLetter, commentary.",
   ]
     .filter(Boolean)
     .join("\n\n");
 
+  const systemWithJson = `${QUESTION_GEN_SYSTEM}
+
+Formato obrigatório (exemplo de estrutura):
+{"questions":[{"stem":"...","alternatives":[{"letter":"A","text":"..."},{"letter":"B","text":"..."},{"letter":"C","text":"..."},{"letter":"D","text":"..."},{"letter":"E","text":"..."}],"correctLetter":"A","commentary":"..."}]}`;
+
   try {
-    const { object } = await generateObject({
+    const result = await generateText({
       model,
-      system: QUESTION_GEN_SYSTEM,
+      system: systemWithJson,
       prompt,
-      schema: zodSchema(generatedQuestionsSchema),
-      schemaName: "TeotQuestions",
-      schemaDescription: "Lista de questões TEOT estilo múltipla escolha",
+      maxOutputTokens: 8192,
     });
+
+    let raw: unknown;
+    try {
+      raw = parseJsonFromModelText(result.text);
+    } catch (parseErr) {
+      console.error("[ai/generate-questions] parse JSON", parseErr, result.text.slice(0, 500));
+      res.statusCode = 502;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.end(
+        JSON.stringify({
+          error: "Resposta do modelo não é JSON válido",
+          message: parseErr instanceof Error ? parseErr.message : String(parseErr),
+        }),
+      );
+      return;
+    }
+
+    const validated = generatedQuestionsSchema.safeParse(raw);
+    if (!validated.success) {
+      res.statusCode = 502;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.end(
+        JSON.stringify({
+          error: "JSON não passou na validação",
+          details: validated.error.flatten(),
+        }),
+      );
+      return;
+    }
+
+    let { questions } = validated.data;
+    if (questions.length > count) {
+      questions = questions.slice(0, count);
+    }
 
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json; charset=utf-8");
-    res.end(JSON.stringify(object));
+    res.end(JSON.stringify({ questions }));
   } catch (err) {
     console.error("[ai/generate-questions]", err);
     res.statusCode = 500;
@@ -163,19 +205,51 @@ export async function handleAssistGrade(body: unknown, res: ServerResponse): Pro
     .filter(Boolean)
     .join("\n\n");
 
+  const systemWithJson = `${ASSIST_GRADE_SYSTEM}
+
+Responda com APENAS um objeto JSON válido com as chaves:
+scoreSuggestion (número 0-100), strengths (array de strings), gaps (array de strings), improvedAnswer (string).`;
+
   try {
-    const { object } = await generateObject({
+    const result = await generateText({
       model,
-      system: ASSIST_GRADE_SYSTEM,
+      system: systemWithJson,
       prompt,
-      schema: zodSchema(assistGradeResultSchema),
-      schemaName: "DiscursiveFeedback",
-      schemaDescription: "Feedback estruturado para resposta discursiva TEOT",
+      maxOutputTokens: 4096,
     });
+
+    let raw: unknown;
+    try {
+      raw = parseJsonFromModelText(result.text);
+    } catch (parseErr) {
+      console.error("[ai/assist-grade] parse JSON", parseErr, result.text.slice(0, 500));
+      res.statusCode = 502;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.end(
+        JSON.stringify({
+          error: "Resposta do modelo não é JSON válido",
+          message: parseErr instanceof Error ? parseErr.message : String(parseErr),
+        }),
+      );
+      return;
+    }
+
+    const validated = assistGradeResultSchema.safeParse(raw);
+    if (!validated.success) {
+      res.statusCode = 502;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.end(
+        JSON.stringify({
+          error: "JSON não passou na validação",
+          details: validated.error.flatten(),
+        }),
+      );
+      return;
+    }
 
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json; charset=utf-8");
-    res.end(JSON.stringify(object));
+    res.end(JSON.stringify(validated.data));
   } catch (err) {
     console.error("[ai/assist-grade]", err);
     res.statusCode = 500;

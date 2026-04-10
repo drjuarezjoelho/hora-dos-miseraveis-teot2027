@@ -30,12 +30,14 @@ export const generatedQuestionsSchema = z.object({
   questions: z.array(
     z.object({
       stem: z.string(),
-      alternatives: z.array(
-        z.object({
-          letter: z.enum(["A", "B", "C", "D", "E"]),
-          text: z.string(),
-        }),
-      ),
+      alternatives: z
+        .array(
+          z.object({
+            letter: z.enum(["A", "B", "C", "D", "E"]),
+            text: z.string(),
+          }),
+        )
+        .length(5),
       correctLetter: z.enum(["A", "B", "C", "D", "E"]),
       commentary: z.string(),
     }),
